@@ -63,6 +63,7 @@ void createFile(){
 
     system("CLS");
     cin.ignore();
+
     cout << "Crear archivo" << endl;
     cout << "Nombre: ";
     cin >> filename;
@@ -87,6 +88,25 @@ void createFile(){
     Sleep(2000);
 }
 
+void readDirectory(){
+    string filename, directory, line;
+
+    system("CLS");
+    cout << "Leer archivos" << endl;
+    cout << "Archivo: ";
+    cin >> filename;
+
+    directory = path + filename;
+
+    ifstream file(directory.c_str());
+
+    while(getline(file, line)){
+        cout << line;
+    }
+
+    Sleep(7000);
+}
+
 void administrateFiles(){
     int opt;
     showMenuAdmin();
@@ -98,7 +118,7 @@ void administrateFiles(){
             createFile();
             break;
         case 2:
-            cout << "Leer archivo";
+            readDirectory();
             break;
         default:
             cout << "\nError: Opcion invalida\n";
