@@ -1,0 +1,3 @@
+
+Checking for existence: C:\Users\usuario\Documents\Universidad\Progra 1\Project2\main.exe
+Executing: C:\Program Files (x86)\CodeBlocks/cb_console_runner.exe "C:\Users\usuario\Documents\Universidad\Progra 1\Project2\main.exe" (in C:\Users\usuario\Documents\Universidad\Progra 1\Project2)
