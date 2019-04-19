@@ -14,7 +14,6 @@
 
 using namespace std;
 string path = "C:\\Users\\usuario\\Documents\\Universidad\\Progra 1\\Project2\\database\\";
-string completeVerse = "";
 
 int getStatusDB(string path){
     DIR *dir;
@@ -124,49 +123,6 @@ void administrateFiles(){
         default:
             cout << "\nError: Opcion invalida\n";
     }
-}
-
-bool validateVerse(string line, string chapter, string verse){
-    /*string text, chapE, versE;
-    bool status = false, statusChapter = false;
-
-    size_t pos = 0;
-    std::string token;
-    std::string delimiter = chapter + ":" + verse;
-
-    while ((pos = line.find(delimiter)) != std::string::npos) {
-        token = line.substr(0, pos);
-        chapE = chapE + token;
-        cout << "chapE: " << chapE << endl;
-        line.erase(0, pos + delimiter.length());
-    }
-
-    std::cout << line << std::endl;
-
-    string::iterator si1;
-    for(si1 = line.begin() ; si1 < line.end(); si1++){
-        cout << *si1 << " ";
-
-        try{
-            int i = std::stoi(s);
-            chapE = chapE + *si1;
-
-            if(statusChapter){
-                if(chapE == chapter){
-                    status = true;
-                }else{
-                    statusChapter = false;
-                }
-            }
-        }
-        catch (std::invalid_argument const &e){
-            if(*sil == ':'){
-                statusChapter = false
-            }
-        }
-    }*/
-
-    //return status;
 }
 
 void searchInDatabase(){
