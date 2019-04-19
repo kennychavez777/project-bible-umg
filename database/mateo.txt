@@ -1,3 +1,26 @@
 
-Checking for existence: C:\Users\usuario\Documents\Universidad\Progra 1\Project2\main.exe
-Executing: C:\Program Files (x86)\CodeBlocks/cb_console_runner.exe "C:\Users\usuario\Documents\Universidad\Progra 1\Project2\main.exe" (in C:\Users\usuario\Documents\Universidad\Progra 1\Project2)
+146:1 Alaba, oh alma m¡a, a Jehov .
+146:2 Alabar‚ a Jehov  en mi vida;
+Cantar‚ salmos a mi Dios mientras viva.
+146:3 No confi‚is en los pr¡ncipes,
+Ni en hijo de hombre, porque no hay en ‚l salvaci¢n.
+146:4 Pues sale su aliento, y vuelve a la tierra;
+En ese mismo d¡a perecen sus pensamientos.
+146:5 Bienaventurado aquel cuyo ayudador es el Dios de Jacob,
+Cuya esperanza est  en Jehov  su Dios,
+146:6 El cual hizo los cielos y la tierra,
+El mar, y todo lo que en ellos hay;
+Que guarda verdad para siempre,
+146:7 Que hace justicia a los agraviados,
+Que da pan a los hambrientos.
+Jehov  liberta a los cautivos;
+146:8 Jehov  abre los ojos a los ciegos;
+Jehov  levanta a los ca¡dos;
+Jehov  ama a los justos.
+146:9 Jehov  guarda a los extranjeros;
+Al hu‚rfano y a la viuda sostiene,
+Y el camino de los imp¡os trastorna.
+146:10 Reinar  Jehov  para siempre;
+Tu Dios, oh Si¢n, de generaci¢n en generaci¢n.
+Aleluya.
+147:1 Hola hola hola

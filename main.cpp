@@ -14,6 +14,7 @@
 
 using namespace std;
 string path = "C:\\Users\\usuario\\Documents\\Universidad\\Progra 1\\Project2\\database\\";
+string completeVerse = "";
 
 int getStatusDB(string path){
     DIR *dir;
@@ -101,7 +102,7 @@ void readDirectory(){
     ifstream file(directory.c_str());
 
     while(getline(file, line)){
-        cout << line;
+        cout << line << endl;
     }
 
     Sleep(7000);
@@ -125,6 +126,117 @@ void administrateFiles(){
     }
 }
 
+bool validateVerse(string line, string chapter, string verse){
+    /*string text, chapE, versE;
+    bool status = false, statusChapter = false;
+
+    size_t pos = 0;
+    std::string token;
+    std::string delimiter = chapter + ":" + verse;
+
+    while ((pos = line.find(delimiter)) != std::string::npos) {
+        token = line.substr(0, pos);
+        chapE = chapE + token;
+        cout << "chapE: " << chapE << endl;
+        line.erase(0, pos + delimiter.length());
+    }
+
+    std::cout << line << std::endl;
+
+    string::iterator si1;
+    for(si1 = line.begin() ; si1 < line.end(); si1++){
+        cout << *si1 << " ";
+
+        try{
+            int i = std::stoi(s);
+            chapE = chapE + *si1;
+
+            if(statusChapter){
+                if(chapE == chapter){
+                    status = true;
+                }else{
+                    statusChapter = false;
+                }
+            }
+        }
+        catch (std::invalid_argument const &e){
+            if(*sil == ':'){
+                statusChapter = false
+            }
+        }
+    }*/
+
+    //return status;
+}
+
+void searchInDatabase(){
+    string book, chapter, verse, filename, line, completeText, nextV, nextChap;
+    int nextVerse = 0, nextChapter;
+
+    system("CLS");
+    cout << "Buscar en base de datos" << endl;
+    cout << "Libro: ";
+    cin >> book;
+    cout << "Capitulo: ";
+    cin >> chapter;
+    cout << "Versiculo: ";
+    cin >> verse;
+
+    istringstream(chapter) >> nextChapter;
+    nextChapter++;
+    istringstream(verse) >> nextVerse;
+    nextVerse++;
+
+    filename = path + book + ".txt";
+    ifstream file(filename.c_str());
+
+    if(file.is_open()){
+        while(getline(file, line)){
+            //validateVerse(line, chapter, verse);
+            completeText = completeText + line;
+        }
+
+        string delimiter = chapter + ":" + verse;
+        int find_ = completeText.find(delimiter);
+
+        if(find_ >= 0){
+            completeText.erase(0, find_);
+
+            std::stringstream ss;
+            ss << nextVerse;
+            nextV = ss.str();
+            string delimiter2 = chapter + ":" +  nextV;
+
+            int find2_ = completeText.find(delimiter2);
+
+            if(find2_ > 0){
+                completeText.erase(find2_, completeText.length());
+            }
+
+            std::stringstream ss2;
+            ss2 << nextChapter;
+            nextChap = ss2.str();
+            string delimiter3 = nextChap + ":1";
+
+            int find3_ = completeText.find(delimiter3);
+
+            if(find3_ > 0){
+                completeText.erase(find3_, completeText.length());
+            }
+
+            cout << "\nResultado: \n" << completeText << endl;
+        }else {
+            cout << "\nNo se encontro el capitulo requerido." << endl;
+        }
+
+        cout << "\n";
+        system("pause");
+    }else{
+        cout << "\nERROR: No se ha encontrado el libro solicitado\n";
+        system("pause");
+    }
+}
+
 int main() {
     int option;
 
@@ -137,7 +249,7 @@ int main() {
                 administrateFiles();
                 break;
             case 2:
-                cout << "Buscar";
+                searchInDatabase();
                 break;
             case 3:
                 return 0;
