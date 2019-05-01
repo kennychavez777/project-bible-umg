@@ -13,7 +13,16 @@
 #include <windows.h>
 
 using namespace std;
-string path = "C:\\Users\\usuario\\Documents\\Universidad\\Progra 1\\Project2\\database\\"; // Declarramos una variable global con la ruta de la base de datos
+//string path = "C:\\Users\\usuario\\Documents\\Universidad\\Progra 1\\Project2\\database\\"; // Declarramos una variable global con la ruta de la base de datos
+//string path = ExePath() + "\\database\\";// Declarramos una variable global con la ruta de la base de datos
+
+
+string ExePath() {
+    char buffer[MAX_PATH];
+    GetModuleFileName( NULL, buffer, MAX_PATH );
+    string::size_type pos = string( buffer ).find_last_of( "\\/" );
+    return string( buffer ).substr( 0, pos);
+}
 
 int getStatusDB(string path){ // Declaramos una función que nos retornara un entero con la cantidad de archivos que hay en nuestra carpeta de base de datos
     DIR *dir; // Declaramos un puntero
@@ -32,6 +41,7 @@ int getStatusDB(string path){ // Declaramos una función que nos retornara un ent
 
 void showMenu(){ // Declaramos una funcion que muestra el menu principal
     string dbStatus = "No disponible"; // Declaramos el estado de nuestra base de datos
+    string path = ExePath() + "\\database\\";
     int quantityFiles = getStatusDB(path); // Guardamos la cantidad de archivos que tenemos en el directorio
 
     if(quantityFiles > 0){ // Si la cantidad de archivos es mayor a 0, entonces el estado será disponible
@@ -62,6 +72,7 @@ void showMenuAdmin(){ // Declaramos otra funcion para mostrar un menu secundario
 
 void createFile(){ // Declaramos una funcion crear archivo
     string filename, text, completeText; // Declaramos todas las variables que utilizaremos en el flujo de la funcion
+    string path = ExePath() + "\\database\\";
 
     system("CLS"); // Limpiamos pantalla
     cin.ignore(); // Sirve para que podamos utilizar getline
@@ -94,6 +105,7 @@ void createFile(){ // Declaramos una funcion crear archivo
 
 void readDirectory(){ // Creamos una funcion para leer archivos
     string filename, directory, line; // Declaramos todas las variables que se utilizaran en todo el flujo de la funcion
+    string path = ExePath() + "\\database\\";
 
     system("CLS"); // Limpiamos pantalla
 
@@ -135,6 +147,7 @@ void administrateFiles(){ // Creamos una funcion para administrar archivos
 void searchInDatabase(){ // Declaramos una funcion que realizara una busqueda mediante capitulo y versiculo
     string book, chapter, verse, filename, line, completeText, nextV, nextChap; // Declaramos todas las variables para este flujo
     int nextVerse = 0, nextChapter = 0; // Declaramos mas variables que nos serviran para el flujo de la funcion
+    string path = ExePath() + "\\database\\";
 
     system("CLS"); // Limpiamos pantalla
     // Solicitamos al usuario todo lo necesario
@@ -202,6 +215,7 @@ void searchInDatabase(){ // Declaramos una funcion que realizara una busqueda me
 
 int main() { // Declaracion del metodo principal
     int option; // Declaramos una variable opcion para el flujo del programa
+    string path = ExePath() + "\\database\\";
 
     while(option != 3){ // Se recorre hasta que la opcion sea 3
         showMenu(); // Mostramos el menu
